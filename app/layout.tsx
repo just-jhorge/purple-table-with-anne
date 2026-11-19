@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Outfit, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/theme-provider";
+import Navbar from "@/components/custom/navbar";
+import Footer from "@/components/custom/footer";
 
 const robotoSlabHeading = Roboto_Slab({
   subsets: ["latin"],
@@ -41,9 +43,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+      <body className="min-h-full flex flex-col bg-background">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="min-h-[calc(100svh-7rem)]">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
