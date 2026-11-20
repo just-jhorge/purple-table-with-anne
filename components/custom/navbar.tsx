@@ -23,7 +23,7 @@ export default function Navbar() {
               Purple Table with Anne
             </h5>
           </div>
-          <ul className="hidden sm:flex items-center gap-6">
+          <ul className="hidden sm:flex items-center justify-center gap-6">
             <li>Home</li>
             <li>About Us</li>
             <li>Projects</li>
